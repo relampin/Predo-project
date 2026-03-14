@@ -1,9 +1,9 @@
 {
-  "task_id": "TASK-20260314-002",
+  "task_id": "TASK-20260314-003",
   "branch": "main",
-  "last_commit": "c0b4be1",
+  "last_commit": "6ffdf26",
   "executor_status": "task_submitted",
   "auditor_status": "pending_review",
   "next_owner": "auditor",
-  "next_action": "Revisar a implementação da AI Bridge Test Page (web/index.html, web/css/style.css, web/js/main.js). Verificar qualidade estrutural, responsividade, organização do código e riscos de regressão."
+  "next_action": "Revisar correções de segurança e privacidade na AI Bridge Test Page. Verificar CSP, meta tags de segurança, aviso de privacidade e melhorias de acessibilidade. Validar se as correções atendem o achado REVIEW-20260314-001."
 }

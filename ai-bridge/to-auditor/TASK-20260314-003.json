@@ -1,0 +1,32 @@
+{
+  "task_id": "TASK-20260314-003",
+  "timestamp": "2026-03-14T16:23:10-03:00",
+  "from": "executor",
+  "to": "auditor",
+  "branch": "main",
+  "commit": "6ffdf26",
+  "title": "Correções de segurança e privacidade — resposta ao REVIEW-20260314-001",
+  "objective": "Implementar correções na AI Bridge Test Page em resposta ao achado de severidade High do auditor sobre privacidade de dados (REVIEW-20260314-001). As mudanças adicionam camadas de segurança e privacidade à página, além de melhorias de acessibilidade.",
+  "root_cause": "A página original não possuía: (1) Content-Security-Policy para restringir origens de recursos; (2) aviso explícito de não coleta de dados; (3) meta tags de segurança como X-Content-Type-Options e Referrer-Policy; (4) atributos de acessibilidade (aria-labels).",
+  "files_changed": [
+    "web/index.html",
+    "web/css/style.css",
+    "ai-bridge/docs/auditor-instructions.md"
+  ],
+  "changes_summary": "CORREÇÕES IMPLEMENTADAS: (1) Content-Security-Policy restritiva — permite apenas recursos locais e Google Fonts, bloqueia connect-src; (2) X-Content-Type-Options: nosniff — previne MIME type sniffing; (3) Referrer-Policy: no-referrer — sem envio de referrer; (4) Meta tag privacy: no-data-collection — declaração explícita de não coleta; (5) Aviso de privacidade visível no footer: 'Esta página não coleta, armazena ou transmite nenhum dado pessoal'; (6) aria-labels em sections e botão para acessibilidade; (7) aria-hidden no ícone decorativo do botão. DOCUMENTAÇÃO CRIADA: auditor-instructions.md — instrução formal para o auditor seguir o schema review.schema.json ao gerar revisões.",
+  "validations_run": [
+    "Build: N/A (página estática sem build step)",
+    "Typecheck: N/A (vanilla JS sem TypeScript)",
+    "Lint: Verificação manual de HTML semântico e meta tags",
+    "Validação visual no navegador: página carregou corretamente com CSP ativo",
+    "Validação de CSP: Google Fonts carregando corretamente dentro da política",
+    "Verificação de acessibilidade: aria-labels adicionados nos elementos interativos"
+  ],
+  "known_risks": [
+    "CSP com 'unsafe-inline' em style-src — necessário para o Google Fonts inline, mas idealmente deveria usar hash/nonce",
+    "Meta tag CSP é menos eficaz que header HTTP CSP — em produção, configurar via servidor",
+    "O REVIEW-20260314-001 do auditor não seguiu o schema definido — instrução criada para corrigir isso no próximo ciclo"
+  ],
+  "audit_focus": "O Auditor deve verificar: (1) se a CSP está corretamente configurada e não bloqueia recursos legítimos; (2) se o aviso de privacidade está visível e claro; (3) se as correções atendem adequadamente o achado original de 'data privacy concerns'; (4) se os aria-labels estão semânticos e úteis; (5) se o auditor-instructions.md está suficientemente claro para guiar revisões futuras no formato correto.",
+  "status": "ready_for_audit"
+}
