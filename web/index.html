@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página de teste para validar o fluxo de comunicação entre Executor (Antigravity) e Auditor (GitHub AI) via ai-bridge.">
+  <title>AI Bridge Test Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header__badge">🌉 ai-bridge</div>
+      <h1 class="header__title">AI Bridge Test Page</h1>
+      <p class="header__subtitle">
+        Página criada para validar o fluxo de comunicação entre
+        <strong>Executor</strong> e <strong>Auditor</strong> via ai-bridge.
+      </p>
+    </div>
+  </header>
+
+  <!-- Flow Indicator -->
+  <section class="flow">
+    <div class="container">
+      <div class="flow__steps">
+        <div class="flow__step flow__step--active" data-step="1">
+          <span class="flow__number">1</span>
+          <span class="flow__label">Implementação</span>
+        </div>
+        <div class="flow__connector"></div>
+        <div class="flow__step" data-step="2">
+          <span class="flow__number">2</span>
+          <span class="flow__label">TASK</span>
+        </div>
+        <div class="flow__connector"></div>
+        <div class="flow__step" data-step="3">
+          <span class="flow__number">3</span>
+          <span class="flow__label">Auditoria</span>
+        </div>
+        <div class="flow__connector"></div>
+        <div class="flow__step" data-step="4">
+          <span class="flow__number">4</span>
+          <span class="flow__label">REVIEW</span>
+        </div>
+        <div class="flow__connector"></div>
+        <div class="flow__step" data-step="5">
+          <span class="flow__number">5</span>
+          <span class="flow__label">Correção</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <main class="cards">
+    <div class="container">
+      <div class="cards__grid">
+
+        <!-- Card: Executor -->
+        <article class="card card--executor">
+          <div class="card__icon">⚡</div>
+          <h2 class="card__title">Executor</h2>
+          <p class="card__role">Antigravity</p>
+          <p class="card__description">
+            Implementa mudanças no código, gera TASKs após cada alteração significativa e corrige com base nos REVIEWs recebidos.
+          </p>
+          <ul class="card__list">
+            <li>Implementar</li>
+            <li>Documentar</li>
+            <li>Corrigir</li>
+          </ul>
+          <div class="card__status card__status--online">
+            <span class="card__dot"></span> Ativo
+          </div>
+        </article>
+
+        <!-- Card: Auditor -->
+        <article class="card card--auditor">
+          <div class="card__icon">🔍</div>
+          <h2 class="card__title">Auditor</h2>
+          <p class="card__role">GitHub AI / Copilot</p>
+          <p class="card__description">
+            Revisa TASKs, verifica diffs reais, compara intenção com implementação e gera REVIEWs estruturados.
+          </p>
+          <ul class="card__list">
+            <li>Revisar</li>
+            <li>Avaliar riscos</li>
+            <li>Recomendar</li>
+          </ul>
+          <div class="card__status card__status--waiting">
+            <span class="card__dot"></span> Aguardando
+          </div>
+        </article>
+
+        <!-- Card: State Control -->
+        <article class="card card--state">
+          <div class="card__icon">🔄</div>
+          <h2 class="card__title">State Control</h2>
+          <p class="card__role">CURRENT_TASK.json</p>
+          <p class="card__description">
+            Controla qual agente executa a próxima ação, mantendo o ciclo organizado e previsível.
+          </p>
+          <ul class="card__list">
+            <li>next_owner</li>
+            <li>next_action</li>
+            <li>executor_status</li>
+          </ul>
+          <div class="card__status card__status--synced">
+            <span class="card__dot"></span> Sincronizado
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <button id="btn-validate" class="cta__button">
+        <span class="cta__icon">▶</span>
+        Iniciar Validação
+      </button>
+      <div id="validation-result" class="cta__result" hidden></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">Teste interno de integração entre agentes</p>
+      <p class="footer__meta">ai-bridge v1.0 · Predo Project · 2026</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
