@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Página de teste para validar o fluxo de comunicação entre Executor (Antigravity) e Auditor (GitHub AI) via ai-bridge.">
+  <!-- Segurança: CSP restritiva - apenas recursos locais e Google Fonts -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self'; connect-src 'none';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer">
+  <!-- Privacidade: Esta página não coleta, armazena ou transmite dados -->
+  <meta name="privacy" content="no-data-collection">
   <title>AI Bridge Test Page</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +31,7 @@
   </header>
 
   <!-- Flow Indicator -->
-  <section class="flow">
+  <section class="flow" aria-label="Fluxo de comunicação ai-bridge">
     <div class="container">
       <div class="flow__steps">
         <div class="flow__step flow__step--active" data-step="1">
@@ -57,7 +63,7 @@
   </section>
 
   <!-- Cards -->
-  <main class="cards">
+  <main class="cards" aria-label="Agentes do sistema">
     <div class="container">
       <div class="cards__grid">
 
@@ -120,10 +126,10 @@
   </main>
 
   <!-- CTA -->
-  <section class="cta">
+  <section class="cta" aria-label="Ação de validação">
     <div class="container">
-      <button id="btn-validate" class="cta__button">
-        <span class="cta__icon">▶</span>
+      <button id="btn-validate" class="cta__button" aria-label="Iniciar simulação de validação do fluxo ai-bridge">
+        <span class="cta__icon" aria-hidden="true">▶</span>
         Iniciar Validação
       </button>
       <div id="validation-result" class="cta__result" hidden></div>
@@ -135,6 +141,7 @@
     <div class="container">
       <p class="footer__text">Teste interno de integração entre agentes</p>
       <p class="footer__meta">ai-bridge v1.0 · Predo Project · 2026</p>
+      <p class="footer__privacy">🔒 Esta página não coleta, armazena ou transmite nenhum dado pessoal.</p>
     </div>
   </footer>
 

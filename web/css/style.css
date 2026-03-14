@@ -442,6 +442,13 @@ body {
   color: var(--color-text-dim);
 }
 
+.footer__privacy {
+  font-size: var(--font-size-xs);
+  color: var(--color-state);
+  margin-top: var(--space-md);
+  opacity: 0.8;
+}
+
 /* ============================================
    Responsive
    ============================================ */
