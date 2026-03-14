@@ -1,0 +1,17 @@
+{
+  "task_id": "TASK-YYYYMMDD-###",
+  "timestamp": "YYYY-MM-DDTHH:MM:SS-03:00",
+  "from": "executor",
+  "to": "auditor",
+  "branch": "",
+  "commit": "",
+  "title": "",
+  "objective": "",
+  "root_cause": "",
+  "files_changed": [],
+  "changes_summary": "",
+  "validations_run": [],
+  "known_risks": [],
+  "audit_focus": "",
+  "status": "ready_for_audit"
+}

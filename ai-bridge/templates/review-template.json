@@ -1,0 +1,22 @@
+{
+  "task_id": "TASK-YYYYMMDD-###",
+  "review_id": "REVIEW-YYYYMMDD-###",
+  "timestamp": "YYYY-MM-DDTHH:MM:SS-03:00",
+  "from": "auditor",
+  "to": "executor",
+  "verdict": "",
+  "merge_risk": "",
+  "summary": "",
+  "findings": [
+    {
+      "severity": "",
+      "file": "",
+      "line": 0,
+      "description": "",
+      "suggestion": ""
+    }
+  ],
+  "coverage_gaps": [],
+  "next_steps": [],
+  "status": "review_complete"
+}

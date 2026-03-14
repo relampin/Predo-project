@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Bridge Review",
+  "description": "Schema para revisões enviadas pelo Auditor ao Executor via ai-bridge.",
+  "type": "object",
+  "required": [
+    "task_id",
+    "review_id",
+    "timestamp",
+    "from",
+    "to",
+    "verdict",
+    "merge_risk",
+    "summary",
+    "findings",
+    "coverage_gaps",
+    "next_steps",
+    "status"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "pattern": "^TASK-\\d{8}-\\d{3}$",
+      "description": "ID da tarefa original sendo revisada"
+    },
+    "review_id": {
+      "type": "string",
+      "pattern": "^REVIEW-\\d{8}-\\d{3}$",
+      "description": "Identificador único no formato REVIEW-YYYYMMDD-###"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data e hora de criação no formato ISO 8601"
+    },
+    "from": {
+      "type": "string",
+      "enum": ["auditor"],
+      "description": "Agente de origem — sempre 'auditor'"
+    },
+    "to": {
+      "type": "string",
+      "enum": ["executor"],
+      "description": "Agente de destino — sempre 'executor'"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": ["approved", "changes_requested", "blocked"],
+      "description": "Veredito da revisão"
+    },
+    "merge_risk": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"],
+      "description": "Nível de risco para merge"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Resumo geral da revisão"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "file", "description", "suggestion"],
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": ["critical", "major", "minor", "info"],
+            "description": "Severidade do achado"
+          },
+          "file": {
+            "type": "string",
+            "description": "Arquivo afetado"
+          },
+          "line": {
+            "type": "integer",
+            "description": "Linha do código (opcional)"
+          },
+          "description": {
+            "type": "string",
+            "description": "Descrição do problema encontrado"
+          },
+          "suggestion": {
+            "type": "string",
+            "description": "Sugestão de correção"
+          }
+        }
+      },
+      "description": "Lista de achados da revisão"
+    },
+    "coverage_gaps": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Lacunas de cobertura identificadas"
+    },
+    "next_steps": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Próximos passos recomendados ao executor"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["review_complete"],
+      "description": "Status da revisão — sempre 'review_complete' ao enviar"
+    }
+  },
+  "additionalProperties": false
+}

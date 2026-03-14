@@ -1,0 +1,9 @@
+{
+  "task_id": "TASK-20260314-001",
+  "branch": "main",
+  "last_commit": null,
+  "executor_status": "task_submitted",
+  "auditor_status": "pending_review",
+  "next_owner": "auditor",
+  "next_action": "Revisar a infraestrutura ai-bridge criada pelo executor."
+}
