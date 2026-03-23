@@ -1,0 +1,8 @@
+chromadb==1.0.15
+numpy==2.2.6
+openai-whisper==20250625
+playwright==1.52.0
+pyautogui==0.9.54
+pyinstaller==6.19.0
+pyttsx3==2.98
+sounddevice==0.5.2

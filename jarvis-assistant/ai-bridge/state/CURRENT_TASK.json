@@ -1,0 +1,9 @@
+{
+  "task_id": "TASK-20260323-001",
+  "branch": "main",
+  "last_commit": "1dfecd1",
+  "executor_status": "awaiting_visual_polish",
+  "auditor_status": "review_complete",
+  "next_owner": "executor",
+  "next_action": "Ler REVIEW-20260323-002 e melhorar apenas a interface grafica do Jarvis em `jarvis-assistant/gui.py`, elevando o acabamento visual sem alterar logica, funcoes, integracoes ou comportamento."
+}
